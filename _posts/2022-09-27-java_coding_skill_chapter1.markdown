@@ -24,6 +24,7 @@ if (microscope.isInorganic(sample)) {
 ### 긍정표현식이 부정표현식 보다 더 낫다
  - 부정적메서드를 긍정적 메서드로 변경한다.
    - 비슷한 메서드가 한쌍이 생기면 부정메서드를 제거한다. 
+
 ```java
 // microscope.isInorganic(sample) 의 결과가 Boolean 일 경우
 // as-is
@@ -79,4 +80,92 @@ boolean isValid() {
 }
 ```
 
-# todo 불표현식 간소화
+# 1.4 불표현식 간소화
+  - 여러 조건문이 합쳐져서 복잡해진 불표현식은 추상화하여 메소드로 뽑아내서 심플하게 바꾸자.
+    - 조건이 복잡해서 파악이 힘들어지면 코드변경시 오류를 유발할 수 있음.
+
+```java
+// as-is
+boolean willCrewSurvive() {
+  return 선체.구멍 == 0 
+    && 연료탱크.연료 > 네비.지구가는데필요한연료 
+    && 산소탱크.지속가능(크루인원) > 네비.지구까지가는시간();
+}
+// to-be
+boolean willCrewSurvive() {
+  boolean 충분한연료 = hasEnoughOxygen() && hasEnoughFuel();
+  return 선체.온전한가 && 충분한연료;
+}
+
+private boolean hasEnoughOxygen() {
+  return 산소탱크.지속가능(크루인원) > 네비.지구까지가는시간();
+}
+
+private boolean hasEnoughFuel() {
+  return 연료탱크.연료 > 네비.지구가는데필요한연료;
+}
+```
+
+# 1.5 조건문에서 NullPointerException 피하기
+  - null 이 올수 있는 값은 우선적으로 null 인지 체크를 하자.
+
+```java
+// as-is
+if (message.trim().isEmpty || message == null) {} // message가 null 일경우 nullPointerException 발생
+
+// to-bo
+if (message == null || message.trim().isEmpty) {} // null 여부를 먼저 확인함으로써 exception 발생을 회피.
+
+```
+
+# 1.6 스위치 실패 피하기
+  - 관심사는 하나만
+    - 서로 다른 관심사는 서로 다른 코드블록에 넣어야한다. 
+    - 관심사 분리에 유리한 if문을 사용하는 것도 방법
+  - 예비분기 default와 break 사용을 잊지말자.
+
+# 1.7 항상 괄호 사용하기
+  - if 문에서 괄호없이 사용할경우 한줄까지만 조건에 해당하기떄문에 의도치 않은 버그가 발생하기 쉽다.
+
+```java
+// as-is
+if(조건)
+  조건결과 // 해당
+  조건결과 // if문에 해당하지않음. 
+
+// to-be
+if(조건) {
+  조건결과 // 해당
+  조건결과 // 해당
+}
+```
+
+# 1.8 코드 대칭 이용하기
+  - 코드의 목적이 명확해진다.
+  - 코드가 대칭인지 판단
+    - 모든 분기가 비슷한 관심사를 표현하는가?
+    - 병렬 구조를 띠나?
+    - 분기가 모두 대칭인가?
+
+```java
+// as-is
+if (user.is미확인) {
+  // ....
+} else if (user.is우주비행사) {
+  // ....
+} else (user.is사령관) {
+  // ...
+}
+
+// to-be - 관심사 분리 적용 및 빠른실패처리
+if (user.is미확인) {
+  return ... // fast fail
+}
+
+if (user.is우주비행사) {
+  // ....
+} else (user.is사령관) {
+  // ...
+}
+```
+  
