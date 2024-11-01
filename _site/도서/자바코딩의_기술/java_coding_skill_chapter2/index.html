@@ -1,0 +1,890 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>2장 코드스타일 레벨 업 - 뭐라도 하겠지</title>
+<meta name="description" content="2장 코드스타일 레벨 업">
+
+
+  <meta name="author" content="두식">
+  
+  <meta property="article:author" content="두식">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="뭐라도 하겠지">
+<meta property="og:title" content="2장 코드스타일 레벨 업">
+<meta property="og:url" content="http://localhost:4000/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter2/">
+
+
+  <meta property="og:description" content="2장 코드스타일 레벨 업">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-28T15:12:35+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter2/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="뭐라도 하겠지 Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          뭐라도 하겠지
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">두식</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Anyway, Web developer</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul ?? Chiang Mai</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:kutarobo@naver.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="2장 코드스타일 레벨 업">
+    <meta itemprop="description" content="2장 코드스타일 레벨 업">
+    <meta itemprop="datePublished" content="2022-09-28T15:12:35+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter2/" itemprop="url">2장 코드스타일 레벨 업
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="2장-코드스타일-레벨-업">2장 코드스타일 레벨 업</h1>
+
+<blockquote>
+  <p>바보도 컴퓨터가 이해하는 코드는 작성할 수 있다<br />
+훌륭한 프로그래머는 인간이 이해하는 코드를 작성한다.</p>
+</blockquote>
+
+<h2 id="21-매직-넘버를-상수로-대체">2.1 매직 넘버를 상수로 대체</h2>
+
+<h3 id="매직넘버가-난무하면-코드를-이해하기-어려워-지고-휴먼에러를-발생시킬-소지가-생긴다">매직넘버가 난무하면 코드를 이해하기 어려워 지고 휴먼에러를 발생시킬 소지가 생긴다.</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CruiseControl</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">targetSpeedKmh</span><span class="o">;</span>
+
+  <span class="kt">void</span> <span class="nf">setPreset</span><span class="o">(</span><span class="kt">int</span> <span class="n">speedPreset</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">speedPreset</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 표면상의 의미는 없지만 프로그램을 제어하는 숫자.</span>
+      <span class="n">setTargetSpeedKmh</span><span class="o">(</span><span class="mi">16944</span><span class="o">);</span>
+    <span class="o">}</span>  <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">speedPreset</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 일명 '매직 넘버'</span>
+      <span class="n">setTargetSpeedKmh</span><span class="o">(</span><span class="mi">7667</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">speedPreset</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">setTargetSpeedKmh</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kt">void</span> <span class="nf">setTargetSpeedKmh</span><span class="o">(</span><span class="kt">double</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">targetSpeedKmh</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">static</span> <span class="kd">final</span>  <span class="kt">int</span> <span class="no">STOP_PRESET</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="kd">static</span> <span class="kd">final</span>  <span class="kt">int</span> <span class="no">PLANETARY_SPEED_PRESET</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="kd">static</span> <span class="kd">final</span>  <span class="kt">int</span> <span class="no">CURISE_SPEED_PRESET</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+
+<span class="kd">static</span> <span class="kd">final</span>  <span class="kt">int</span> <span class="no">CRUISE_SPEED_KMH</span> <span class="o">=</span> <span class="mi">16944</span><span class="o">;</span>
+<span class="kd">static</span> <span class="kd">final</span>  <span class="kt">int</span> <span class="no">PLANET_SPEED_KMH</span> <span class="o">=</span> <span class="mi">7667</span><span class="o">;</span>
+<span class="kd">static</span> <span class="kd">final</span>  <span class="kt">int</span> <span class="no">STOP_SPEED_KMH</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+<span class="kd">private</span> <span class="kt">double</span> <span class="n">targetSpeedKmh</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">setPreset</span><span class="o">(</span><span class="kt">int</span> <span class="n">speedPreset</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">speedPreset</span> <span class="o">==</span> <span class="no">CURISE_SPEED_PRESET</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 매직넘버를 제거후 유의미한 이름을 적용한 상수사용</span>
+    <span class="n">setTargetSpeedKmh</span><span class="o">(</span><span class="no">CRUISE_SPEED_KMH</span><span class="o">);</span>
+  <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">speedPreset</span> <span class="o">==</span> <span class="no">PLANETARY_SPEED_PRESET</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">setTargetSpeedKmh</span><span class="o">(</span><span class="no">PLANET_SPEED_KMH</span><span class="o">);</span>
+  <span class="o">}</span> <span class="k">else</span> <span class="o">.....</span>
+  <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="22-정수-상수-대신-열거형">2.2 정수 상수 대신 열거형</h2>
+
+<h3 id="정수상수를-매직넘버로-대체했어도-유효하지않은-값을-거절하도록-강제할-수는-없다">정수상수를 매직넘버로 대체했어도, 유효하지않은 값을 거절하도록 강제할 수는 없다.</h3>
+
+<p>-</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CruiseControl</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kt">double</span> <span class="n">targetSpeedKmh</span><span class="o">;</span>
+
+  <span class="kt">void</span> <span class="nf">setPreset</span><span class="o">(</span><span class="kt">int</span> <span class="n">speedPreset</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Objects</span><span class="o">.</span><span class="na">requierNonNull</span><span class="o">(</span><span class="n">speedPreset</span><span class="o">);</span>
+
+    <span class="c1">// enunm을 사용함으로써 분기가 사라지고 코드가 더 간결해짐.</span>
+    <span class="c1">// 유효하지 않은 값이 들어오는것을 차단함.</span>
+    <span class="n">setTargetSpeedKmh</span><span class="o">(</span><span class="n">speedPreset</span><span class="o">.</span><span class="na">speedKmh</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kt">void</span> <span class="nf">setTargetSpeedKmh</span><span class="o">(</span><span class="kt">double</span> <span class="n">speedKmh</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">targetSpeedKmh</span> <span class="o">=</span> <span class="n">speedKmh</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// enum 객체를 만들어 상수를 대체.</span>
+<span class="kd">enum</span> <span class="nc">SpeedPreset</span> <span class="o">{</span>
+  <span class="no">STOP</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="no">PLANETARY_SPEED</span><span class="o">(</span><span class="mi">7667</span><span class="o">),</span> <span class="no">CRUISE_SPEED</span><span class="o">(</span><span class="mi">16944</span><span class="o">)</span>
+
+  <span class="kd">final</span> <span class="kt">double</span> <span class="n">speedKmh</span><span class="o">;</span>
+
+  <span class="nc">SpeedPreset</span><span class="o">(</span><span class="kt">double</span> <span class="n">speedkmh</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">speedKmh</span> <span class="o">=</span> <span class="n">speedKmh</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="23-for-루프-대신-for-each">2.3 For 루프 대신 For-Each</h2>
+
+<ul>
+  <li>예시코드</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// as - is</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">checks</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// blar blar</span>
+<span class="o">}</span>
+
+<span class="c1">// to - be</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">check</span> <span class="o">:</span> <span class="n">checks</span> <span class="o">)</span> <span class="o">{</span> <span class="c1">// 단수명 : 복수명 형태로 지어주면 Good</span>
+  <span class="c1">// blar blar</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>개발자가 사용하지 않는 index에 대해 고민할 필요가 없다
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">indexOutOfBoundsExceptions</code> 와 같은 휴먼에러 방지 가능.</li>
+      <li>로직이 좀 더 안전하고 이해하기 쉬워진다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="24-순회하며-컬렉션-수정하지-않기">2.4 순회하며 컬렉션 수정하지 않기</h2>
+
+<ul>
+  <li>예시 코드</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// as - is</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">Supply</span> <span class="n">supply</span> <span class="o">:</span> <span class="n">supplies</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">supply</span><span class="o">.</span><span class="na">isContaminated</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">supplies</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">supply</span><span class="o">);</span>  <span class="c1">// ConcurrentModificationException 발생 위험</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// to - be</span>
+<span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Supply</span><span class="o">&gt;</span> <span class="n">iterator</span> <span class="o">=</span> <span class="n">supplies</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">(</span><span class="n">iterator</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">iterator</span><span class="o">.</span><span class="na">next</span><span class="o">().</span><span class="na">isContamiated</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">iterator</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>해결법 1
+    <ul>
+      <li>리스트를 순회하며 변질된 제품을 찾고 그 후 발견한 제품을 제거.</li>
+    </ul>
+  </li>
+  <li>해결법 2
+    <ul>
+      <li>iterator , while 사용</li>
+      <li>Iterator는 첫 번쨰 원소 부터 리스트내 원소를 가리키는 포인터처럼 동작함.
+        <ul>
+          <li>hasNext로 원소가 남아있는지 묻고 next로 다음원소를 얻어 처리한다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>해결법 3</li>
+</ol>
+
+<ul>
+  <li>자바 8부터 람다를 이용하여 Collection.removeIf() 같은 메서드를 사용하여 2번과 비슷한 효과를 얻을 수 있다.</li>
+</ul>
+
+<h2 id="25-순회하며-계산-집약적-연산-하지-않기">2.5 순회하며 계산 집약적 연산 하지 않기</h2>
+
+<ul>
+  <li>예시코드</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// as - is</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Supply</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">Supply</span> <span class="n">supply</span> <span class="o">:</span> <span class="n">supplies</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// 계산집약적 연산은 성능에 이슈를 초래 할 수 있다</span>
+  <span class="k">if</span> <span class="o">(</span><span class="nc">Pattern</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="n">regex</span><span class="o">,</span> <span class="n">supply</span><span class="o">.</span><span class="na">toString</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// 반복할떄마다 컴파일함.</span>
+    <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">supply</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+
+<span class="c1">// to - be</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Supply</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+<span class="c1">// 반복해서 성능저하 시킬요인은 루프 밖으로 뺸다.</span>
+<span class="nc">Pattern</span> <span class="n">pattern</span> <span class="o">=</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="n">regex</span><span class="o">);</span> <span class="c1">// 컴파일은 한번만함.</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">Supply</span> <span class="n">supply</span> <span class="o">:</span> <span class="n">supplies</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// 컴파일된 표현식 실행. 가볍다.</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">supply</span><span class="o">.</span><span class="na">toString</span><span class="o">()).</span><span class="na">matches</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">supply</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>루프안에서 성능저하가 발생할 요인을 가능하면 루프밖으로 뺴자.</li>
+</ul>
+
+<h2 id="26-새-줄로-그루핑">2.6 새 줄로 그루핑</h2>
+
+<ul>
+  <li>에시코드</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// as - is</span>
+<span class="kd">enum</span> <span class="nc">DistanceUnit</span> <span class="o">{</span>
+  <span class="no">MILES</span><span class="o">,</span> <span class="no">KILOMETERS</span><span class="o">;</span>
+
+  <span class="c1">// 의미와 역할과 상관없이 코드 블럭이 붙어있다.</span>
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">MILE_IN_KILOMETERS</span> <span class="o">=</span> <span class="mf">1.60934</span><span class="o">;</span>
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">IDENTITY</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">KILOMETER_IN_MILES</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="no">MILE_IN_KILOMETERS</span><span class="o">;</span>
+
+  <span class="kt">double</span> <span class="nf">getConversionRate</span><span class="o">(</span><span class="nc">DistanceUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="no">IDENTITY</span><span class="o">;</span>
+    <span class="o">}</span> <span class="c1">// if 문도 붙어있다. 하나의 블럭 처럼 읽힘.</span>
+    <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="no">MILES</span> <span class="o">&amp;&amp;</span> <span class="n">unit</span> <span class="o">==</span> <span class="no">KILOMETERS</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="no">MILE_IN_KILOMETERS</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="no">KILOMETER_IN_MILES</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// to - be</span>
+<span class="kd">enum</span> <span class="nc">DistanceUnit</span> <span class="o">{</span>
+  <span class="no">MILES</span><span class="o">,</span> <span class="no">KILOMETERS</span><span class="o">;</span>
+
+  <span class="c1">// 연관된 코드끼리 새 줄로 구분함</span>
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">IDENTITY</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">MILE_IN_KILOMETERS</span> <span class="o">=</span> <span class="mf">1.60934</span><span class="o">;</span>
+  <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">KILOMETER_IN_MILES</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="no">MILE_IN_KILOMETERS</span><span class="o">;</span>
+
+  <span class="kt">double</span> <span class="nf">getConversionRate</span><span class="o">(</span><span class="nc">DistanceUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="no">IDENTITY</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="no">MILES</span> <span class="o">&amp;&amp;</span> <span class="n">unit</span> <span class="o">==</span> <span class="no">KILOMETERS</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 성격이 다른분기를 새줄로 구분함.</span>
+      <span class="k">return</span> <span class="no">MILE_IN_KILOMETERS</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="no">KILOMETER_IN_MILES</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>코드블럭이 붙어있으면 한덩어리로 인식이 되기 쉽다.
+    <ul>
+      <li>별개의 블륵을 새 줄로 분리하면 가독성을 향상 시킬 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="27-이어붙이기-대신-서식화">2.7 이어붙이기 대신 서식화</h2>
+
+<ul>
+  <li>예시코드</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// as - is</span>
+<span class="nc">String</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">()</span> <span class="o">+</span> <span class="s">": ["</span> <span class="o">+</span> <span class="n">formattedMonth</span> <span class="o">+</span> <span class="s">"-"</span>
+  <span class="o">+</span> <span class="n">today</span><span class="o">.</span><span class="na">getDayOfMonth</span><span class="o">()</span> <span class="o">+</span> <span class="s">"-"</span> <span class="o">+</span> <span class="n">today</span><span class="o">.</span><span class="na">getYear</span><span class="o">()</span> <span class="o">+</span> <span class="s">"](Day "</span>
+  <span class="o">+</span> <span class="o">(</span><span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">today</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="s">")&gt; "</span>
+  <span class="o">+</span> <span class="n">message</span> <span class="o">+</span> <span class="nc">System</span><span class="o">.</span><span class="na">lineSeparator</span><span class="o">();</span>
+
+<span class="c1">// to - be</span>
+<span class="nc">String</span> <span class="n">entry</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"$S: [%tm-%&lt;te-%&lt;tY](Day %d)&gt; %s%n"</span><span class="o">,</span> <span class="n">author</span><span class="o">,</span> <span class="n">today</span><span class="o">,</span> <span class="nc">ChronoUnit</span><span class="o">.</span><span class="na">DAYS</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">today</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>서식문자열의 활용은 가독성을 높여준다.
+    <ul>
+      <li>어떻게 출력할지와 무엇을 출력할지를 분리하자.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="28-직접만들지-말고-자바-api-사용하기">2.8 직접만들지 말고 자바 API 사용하기</h2>
+
+<ul>
+  <li>예시코드</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// as - is</span>
+<span class="kt">int</span> <span class="nf">getQuantity</span><span class="o">(</span><span class="nc">Supply</span> <span class="n">supply</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">supply</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">NullPointerException</span><span class="o">(</span><span class="s">"blar blar"</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kt">int</span> <span class="n">quantity</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="k">for</span> <span class="o">(</span><span class="nc">Supply</span> <span class="n">supplyInStock</span> <span class="o">:</span> <span class="n">supplies</span> <span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">supply</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">supplyInStock</span><span class="o">)){</span>
+      <span class="n">quantity</span><span class="o">++;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="k">return</span> <span class="n">quantity</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// to - be</span>
+<span class="kt">int</span> <span class="nf">getQuantity</span><span class="o">(</span><span class="nc">Supply</span> <span class="n">supply</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nc">Objects</span><span class="o">.</span><span class="na">requireNonNull</span><span class="o">(</span><span class="n">supply</span><span class="o">,</span> <span class="s">"blar blar"</span><span class="o">);</span>
+  <span class="k">return</span> <span class="nc">Collecyions</span><span class="o">.</span><span class="na">frequency</span><span class="o">(</span><span class="n">supplies</span><span class="o">,</span> <span class="n">supply</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>JAVA API 는 예전과 다르게 방대해졌고, 끊임없이 개선되어가고 있다.
+    <ul>
+      <li>새로운 기능을 추가하기보다 기존에 잘 만들어져 있는 API 기능을 잘 활용하는게 가독성 면이나 협업에 도움이 된다.</li>
+    </ul>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%EB%8F%84%EC%84%9C" class="page__taxonomy-item p-category" rel="tag">도서</a><span class="sep">, </span>
+    
+      <a href="/categories/#%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98-%EA%B8%B0%EC%88%A0" class="page__taxonomy-item p-category" rel="tag">자바코딩의_기술</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-09-28T15:12:35+09:00">September 28, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=2%EC%9E%A5+%EC%BD%94%EB%93%9C%EC%8A%A4%ED%83%80%EC%9D%BC+%EB%A0%88%EB%B2%A8+%EC%97%85%20http%3A%2F%2Flocalhost%3A4000%2F%25EB%258F%2584%25EC%2584%259C%2F%25EC%259E%2590%25EB%25B0%2594%25EC%25BD%2594%25EB%2594%25A9%25EC%259D%2598_%25EA%25B8%25B0%25EC%2588%25A0%2Fjava_coding_skill_chapter2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25EB%258F%2584%25EC%2584%259C%2F%25EC%259E%2590%25EB%25B0%2594%25EC%25BD%2594%25EB%2594%25A9%25EC%259D%2598_%25EA%25B8%25B0%25EC%2588%25A0%2Fjava_coding_skill_chapter2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter2/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter1/" class="pagination--pager" title="1장 우선정리부터
+">Previous</a>
+    
+    
+      <a href="/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter3/" class="pagination--pager" title="3장 슬기롭게 주석 사용하기
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%9E%A1%EB%8B%B4/test-category/" rel="permalink">블로그를 다시시작하며
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  사실 이 블로그는 일전에 멀티테마를 적용해보고싶어서 이리저리 시도해보다가 뜻대로 되지않아 방치했었다.
+회사에 들어가 일을 시작하게되면 항상 개인 깃허브는 방치하게되었는데 이를 벗어나고자 다시 블로그에 손을 댄다.
+“뭐라도하겠지” 라는 마음가짐으로.
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter3/" rel="permalink">3장 슬기롭게 주석 사용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">3장 슬기롭게 주석 사용하기
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EC%BD%94%EB%94%A9%EC%9D%98_%EA%B8%B0%EC%88%A0/java_coding_skill_chapter1/" rel="permalink">1장 우선정리부터
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">1장 우선정리부터
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll/update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 <a href="http://localhost:4000">뭐라도 하겠지</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
